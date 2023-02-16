@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Login } from "./Components/Auth/Login";
+import { Register } from "./Components/Auth/Register";
+import { FamilyList } from "./Container/FamilyManagement/FamilyList";
+import Footer from "./Components/Includes/Footer";
+import Header from "./Components/Includes/Header";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Layout from "./Components/TheLayout/Layout";
+import "./assets/stylesheet/style.css";
+import WebHome from "./Components/TheWebPage/WebHome";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Header /> */}
+      <BrowserRouter>
+        <Routes>
+          {/* <Route path="/family-management" element={<FamilyList />} /> */}
+          <Route path="/" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<Layout />} />
+          <Route path="/web" element={<WebHome />} />
+        </Routes>
+      </BrowserRouter>
+      {/* <Footer /> */}
     </div>
   );
 }

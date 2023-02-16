@@ -1,0 +1,55 @@
+/* colors */
+/* font size */
+/* border size */
+/* border size */
+/* border radius */
+/* font family */
+/* colors */
+.newCard, .secondcard, .newCard--serious {
+  background: #fff;
+  padding: 15px;
+  border: 1px solid #000;
+  width: 450px;
+  margin: auto;
+}
+.newCard button, .secondcard button, .newCard--serious button {
+  display: inline-block;
+  padding: 5px 12px;
+  background: #f00;
+  color: #000;
+}
+.secondcard {
+  border-radius: 5px;
+  margin-top: 25px;
+}
+
+.icon-20px {
+  font-size: 20px;
+}
+
+.icon-40px {
+  font-size: 40px;
+}
+
+.icon-60px {
+  font-size: 60px;
+}
+
+.icon-eye:before {
+  content: "\f112";
+  font-size: 18px;
+}
+
+.icon-start:before {
+  content: "\f12e";
+  font-size: 18px;
+}
+
+.icon-stop:before {
+  content: "\f12f";
+  font-size: 18px;
+}
+
+.newSection {
+  font-size: 14.8172378173px;
+}/*# sourceMappingURL=styles.css.map */

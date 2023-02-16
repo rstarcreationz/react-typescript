@@ -1,0 +1,23 @@
+@mixin flexbox($justify:center ) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+}
+
+@mixin ulList{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin buttonsDefault($background, $color, $width){
+    display: inline-block;
+    padding: 5px 12px;
+    background: $background;
+    color: $color;
+    @if $width != "null" {
+        width: $width;
+    }@else{
+        @error "not found any width"
+    }
+}

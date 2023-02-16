@@ -1,0 +1,55 @@
+
+$primaryDefault: #fff000;
+$sizes: 20px, 40px, 60px;
+@use "scss/mixins/mixins";
+@use './scss/variables/variables';
+@use "sass:math";
+.newCard {
+    background: variables.$color-white;
+    padding: 15px;
+    border: variables.$border-size-1 solid #000;
+    width: 450px;
+    margin: auto;
+    button{
+        @include mixins.buttonsDefault(#f00, #000, null);
+    }
+    &--serious{
+        @extend .newCard;
+    }
+}
+
+.secondcard {
+    @extend .newCard;
+    border-radius: 5px;
+    margin-top: 25px;
+}
+
+@each $size in $sizes {
+    .icon-#{$size} {
+        font-size: $size;
+    }
+}
+
+$icons: ("eye": "\f112", "start": "\f12e", "stop": "\f12f");
+
+@each $name, $type in $icons {
+    .icon-#{$name}:before{
+        content: $type;
+        font-size: 18px;
+    }
+}
+
+@function getCalcfont($value, $base, $ratio: 1.1618){
+    @while $value > $base {
+        $value: math.div($value, $ratio); //math.div($value, $ratio);
+    }
+    @return $value;
+}
+
+.newSection {
+    font-size: getCalcfont(20px, 16px);
+}
+
+// body{
+//     background: $primaryDefault;
+// }
